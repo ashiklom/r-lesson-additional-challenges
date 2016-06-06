@@ -1,0 +1,23 @@
+---
+title: "Lesson 3: Additional challenges"
+author: "Alexey Shiklomanov"
+output: html_document
+---
+
+# Using loops
+
+Write a function that returns the first *n* values of the [Fibonacci sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html).
+
+```{r, echo=-(1:8)}
+fibonacci <- function(n){
+    a <- numeric(n)
+    a[1] <- 0
+    a[2] <- 1
+    for(i in 3:n){
+        a[i] <- a[i-1] + a[i-2]
+    }
+    return(a)
+}
+fibonacci(5)
+fibonacci(8)
+```

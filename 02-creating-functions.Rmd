@@ -1,0 +1,33 @@
+---
+title: "Lesson 2: Additional challenges"
+author: "Alexey Shiklomanov"
+output: html_document
+---
+
+# Create a function
+
+Functions in R are objects, just like variables. Use this principle to write a `composite` function that works as follows.
+
+```{r, echo=-1}
+composite <- function(x, func1, func2) func2(func1(x))
+x <- 1:25
+composite(x, cumsum, head)
+composite(x, length, sqrt)
+```
+
+# A function with default arguments
+
+Consider the following interesting function. What goes in the `???`?
+
+```{r, echo=-1}
+printTwo <- function(a, b=a) print(c(a,b))
+# printTwo <- function(???){
+#   print(c(a, b))
+# }
+printTwo(3)
+printTwo(5)
+printTwo(6)
+printTwo(5, 6)
+printTwo(7, 2)
+```
+
